@@ -7,7 +7,7 @@
 osascript -e 'tell application "System Preferences" to quit'
 
 ###############################################################################
-	# General UI/UX                                                               #
+# General UI/UX                                                               #
 ###############################################################################
 
 # Disable transparency in the menu bar and elsewhere on Yosemite
@@ -97,7 +97,7 @@ defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
 defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
 
 ###############################################################################
-	# Trackpad, mouse, keyboard, Bluetooth accessories, and input                 #
+# Trackpad, mouse, keyboard, Bluetooth accessories, and input                 #
 ###############################################################################
 
 # Trackpad: enable tap to click for this user and for the login screen
@@ -148,18 +148,6 @@ defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 
 # Stop iTunes from responding to the keyboard media keys
 #launchctl unload -w /System/Library/LaunchAgents/com.apple.rcd.plist 2> /dev/null
-
-# Set Dvorak
-defaults write /Library/Preferences/com.apple.HIToolbox AppleCurrentKeyboardLayoutInputSourceID "com.apple.keylayout.Dvorak"
-defaults write /Library/Preferences/com.apple.HIToolbox AppleDefaultAsciiInputSource -dict InputSourceKind "Keyboard Layout" "KeyboardLayout ID" -int 16300 "KeyboardLayout Name" Dvorak
-
-# Delete the default layouts (US)
-defaults delete /Library/Preferences/com.apple.HIToolbox AppleEnabledInputSources
-
-# Enable Dvorak layout
-defaults write /Library/Preferences/com.apple.HIToolbox AppleEnabledInputSources -array '{ InputSourceKind = "Keyboard Layout"; "KeyboardLayout ID" = 16300; "KeyboardLayout Name" = Dvorak; }'
-defaults write /Library/Preferences/com.apple.HIToolbox AppleInputSourceHistory -array '{ InputSourceKind = "Keyboard Layout"; "KeyboardLayout ID" = 16300; "KeyboardLayout Name" = Dvorak; }'
-defaults write /Library/Preferences/com.apple.HIToolbox AppleSelectedInputSources -array '{ InputSourceKind = "Keyboard Layout"; "KeyboardLayout ID" = 16300; "KeyboardLayout Name" = Dvorak; }'
 
 ###############################################################################
 	# Screen                                                                      #
@@ -294,7 +282,7 @@ defaults write com.apple.finder FXInfoPanesExpanded -dict \
 	Privileges -bool true
 
 ###############################################################################
-	# Dock, Dashboard, and hot corners                                            #
+# Dock, Dashboard, and hot corners                                            #
 ###############################################################################
 
 # Enable highlight hover effect for the grid view of a stack (Dock)
@@ -387,7 +375,7 @@ defaults write com.apple.dock wvous-bl-corner -int 0
 defaults write com.apple.dock wvous-bl-modifier -int 0
 
 ###############################################################################
-	# Safari & WebKit                                                             #
+# Safari & WebKit                                                             #
 ###############################################################################
 
 # Privacy: don’t send search queries to Apple
@@ -469,7 +457,7 @@ defaults write com.apple.Safari SendDoNotTrackHTTPHeader -bool true
 defaults write com.apple.Safari InstallExtensionUpdatesAutomatically -bool true
 
 ###############################################################################
-	# Mail                                                                        #
+# Mail                                                                        #
 ###############################################################################
 
 # Disable send and reply animations in Mail.app
@@ -494,7 +482,7 @@ defaults write com.apple.mail DisableInlineAttachmentViewing -bool true
 #defaults write com.apple.mail SpellCheckingBehavior -string "NoSpellCheckingEnabled"
 
 ###############################################################################
-	# Spotlight                                                                   #
+# Spotlight                                                                   #
 ###############################################################################
 
 # Change indexing order and disable some search results
@@ -530,7 +518,7 @@ defaults write com.apple.spotlight orderedItems -array \
 	'{"enabled" = 0;"name" = "MENU_SPOTLIGHT_SUGGESTIONS";}'
 
 ###############################################################################
-	# Terminal & iTerm 2                                                          #
+# Terminal & iTerm 2                                                          #
 ###############################################################################
 
 # Only use UTF-8 in Terminal.app
@@ -602,14 +590,14 @@ open "${HOME}/init/Solarized Dark.itermcolors"
 defaults write com.googlecode.iterm2 PromptOnQuit -bool false
 
 ###############################################################################
-	# Time Machine                                                                #
+# Time Machine                                                                #
 ###############################################################################
 
 # Prevent Time Machine from prompting to use new hard drives as backup volume
 defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
 
 ###############################################################################
-	# Activity Monitor                                                            #
+# Activity Monitor                                                            #
 ###############################################################################
 
 # Show the main window when launching Activity Monitor
@@ -652,7 +640,7 @@ defaults write com.apple.DiskUtility advanced-image-options -bool true
 #defaults write com.apple.QuickTimePlayerX MGPlayMovieOnOpen -bool true
 
 ###############################################################################
-	# Mac App Store                                                               #
+# Mac App Store                                                               #
 ###############################################################################
 
 # Enable the WebKit Developer Tools in the Mac App Store
@@ -683,14 +671,14 @@ defaults write com.apple.commerce AutoUpdate -bool true
 #defaults write com.apple.commerce AutoUpdateRestartRequired -bool true
 
 ###############################################################################
-	# Photos                                                                      #
+# Photos                                                                      #
 ###############################################################################
 
 # Prevent Photos from opening automatically when devices are plugged in
 defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool true
 
 ###############################################################################
-	# Messages                                                                    #
+# Messages                                                                    #
 ###############################################################################
 
 # Disable automatic emoji substitution (i.e. use plain text smileys)
@@ -703,7 +691,7 @@ defaults write com.apple.messageshelper.MessageController SOInputLineSettings -d
 #defaults write com.apple.messageshelper.MessageController SOInputLineSettings -dict-add "continuousSpellCheckingEnabled" -bool false
 
 ###############################################################################
-	# Google Chrome & Google Chrome Canary                                        #
+# Google Chrome & Google Chrome Canary                                        #
 ###############################################################################
 
 # Disable the all too sensitive backswipe on trackpads
@@ -723,14 +711,14 @@ defaults write com.google.Chrome AppleEnableSwipeNavigateWithScrolls -bool false
 #defaults write com.google.Chrome.canary PMPrintingExpandedStateForPrint2 -bool true
 
 ###############################################################################
-	# GPGMail 2                                                                   #
+# GPGMail 2                                                                   #
 ###############################################################################
 
 # Disable signing emails by default
 #defaults write ~/Library/Preferences/org.gpgtools.gpgmail SignNewEmailsByDefault -bool false
 
 ###############################################################################
-	# Opera & Opera Developer                                                     #
+# Opera & Opera Developer                                                     #
 ###############################################################################
 
 # Expand the print dialog by default
@@ -738,7 +726,7 @@ defaults write com.google.Chrome AppleEnableSwipeNavigateWithScrolls -bool false
 #defaults write com.operasoftware.OperaDeveloper PMPrintingExpandedStateForPrint2 -boolean true
 
 ###############################################################################
-	# SizeUp.app                                                                  #
+# SizeUp.app                                                                  #
 ###############################################################################
 
 # Start SizeUp at login
@@ -748,14 +736,14 @@ defaults write com.google.Chrome AppleEnableSwipeNavigateWithScrolls -bool false
 #defaults write com.irradiatedsoftware.SizeUp ShowPrefsOnNextStart -bool false
 
 ###############################################################################
-	# Sublime Text                                                                #
+# Sublime Text                                                                #
 ###############################################################################
 
 # Install Sublime Text settings
 cp -r init/Preferences.sublime-settings ~/Library/Application\ Support/Sublime\ Text*/Packages/User/Preferences.sublime-settings 2> /dev/null
 
 ###############################################################################
-	# Transmission.app                                                            #
+# Transmission.app                                                            #
 ###############################################################################
 
 # Use `~/Documents/Torrents` to store incomplete downloads

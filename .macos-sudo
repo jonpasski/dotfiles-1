@@ -66,6 +66,18 @@ sudo systemsetup -setcomputersleep Off > /dev/null
 # Set the timezone; see `sudo systemsetup -listtimezones` for other values
 sudo systemsetup -settimezone "US/Pacific" > /dev/null
 
+# Set Dvorak
+defaults write /Library/Preferences/com.apple.HIToolbox AppleCurrentKeyboardLayoutInputSourceID "com.apple.keylayout.Dvorak"
+defaults write /Library/Preferences/com.apple.HIToolbox AppleDefaultAsciiInputSource -dict InputSourceKind "Keyboard Layout" "KeyboardLayout ID" -int 16300 "KeyboardLayout Name" Dvorak
+
+# Delete the default layouts (US)
+defaults delete /Library/Preferences/com.apple.HIToolbox AppleEnabledInputSources
+
+# Enable Dvorak layout
+defaults write /Library/Preferences/com.apple.HIToolbox AppleEnabledInputSources -array '{ InputSourceKind = "Keyboard Layout"; "KeyboardLayout ID" = 16300; "KeyboardLayout Name" = Dvorak; }'
+defaults write /Library/Preferences/com.apple.HIToolbox AppleInputSourceHistory -array '{ InputSourceKind = "Keyboard Layout"; "KeyboardLayout ID" = 16300; "KeyboardLayout Name" = Dvorak; }'
+defaults write /Library/Preferences/com.apple.HIToolbox AppleSelectedInputSources -array '{ InputSourceKind = "Keyboard Layout"; "KeyboardLayout ID" = 16300; "KeyboardLayout Name" = Dvorak; }'
+
 ###############################################################################
 # Screen                                                                      #
 ###############################################################################
