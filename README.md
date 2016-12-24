@@ -69,11 +69,19 @@ You could also use `~/.extra` to override settings, functions and aliases from m
 
 When setting up a new Mac, you may want to set some sensible macOS defaults:
 
+As the administrative account:
+
+```bash
+./.macos-sudo
+```
+
+For all accounts:
+
 ```bash
 ./.macos
 ```
 
-### Install Homebrew formulae
+### Install Homebrew formulae (Administrative)
 
 When setting up a new Mac, you may want to install some common [Homebrew](http://brew.sh/) formulae (after installing Homebrew, of course):
 
