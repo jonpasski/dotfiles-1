@@ -101,5 +101,11 @@ brew upgrade
 #brew install webkit2png
 #brew install zopfli
 
+# Backups
+brew install tarsnap
+
+# Disable analytics
+brew analytics off
+
 # Remove outdated versions from the cellar.
 brew cleanup
